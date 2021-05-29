@@ -1,5 +1,6 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
+import CalendarPage from '../pages/CalendarPage' 
 
 import { Text, View} from 'react-native'
 
@@ -22,7 +23,7 @@ export default function HomePageNavigator() {
   >
     <Stack.Screen
       name="Calendar"
-      component= {Calendar}
+      component= {CalendarPage}
     />
   </Stack.Navigator>      
   )
