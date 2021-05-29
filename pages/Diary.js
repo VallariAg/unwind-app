@@ -44,7 +44,7 @@ export default function FeedView() {
   );
 
   return (
-    <View style={{flex: 1, backgroundColor: "red"}}>
+    <View style={styles.container}>
       <FlatList data={DATA} renderItem={renderItem} />
     </View>
   );

@@ -5,8 +5,8 @@ export default StyleSheet.create({
       flex: 1,
       justifyContent:"center",
       // alignItems: 'center',
-      backgroundColor: "red",
-      // height: 20
+      // backgroundColor: "red",
+      width: "90%"
       // marginTop: StatusBar.currentHeight || 0,
     },
     list: {
@@ -40,6 +40,7 @@ export default StyleSheet.create({
     },
     modalView: {
       margin: 20,
+      // height: "50%",
       backgroundColor: "white",
       borderRadius: 20,
       padding: 35,
@@ -54,9 +55,10 @@ export default StyleSheet.create({
       elevation: 5
     },
     button: {
-      flex: 1,
+      // flex: 1,
       borderRadius: 2,
-      padding: 10
+      padding: 10,
+      // height: 5
     },
     buttonOpen: {
       backgroundColor: "#F194FF",

@@ -20,18 +20,9 @@ export default function App() {
       <SafeAreaView style={styles.container}>
 <Text> aa</Text>
 <Text> aa</Text>
-<Text> aa</Text>
-<Text> aa</Text>
-<Text> aa</Text>
-<Text> aa</Text>
-<Text> aa</Text>
-<Text> aa</Text>
-<Text> aa</Text>
-<Text> aa</Text>
-<Text> aa</Text>
+
          <Diary/>
 {/* <Text> bb</Text> */}
-<Text> bb</Text>
       </SafeAreaView>
     </ApolloProvider>
   );
