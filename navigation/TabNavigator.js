@@ -1,35 +1,20 @@
 import React from 'react'
-import { View, Text, Animated, StyleSheet, Image} from 'react-native'
-import {NavigationContainer, useNavigation, useRoute} from '@react-navigation/native'
+import { View, Text, Animated, StyleSheet, Image, TouchableOpacity} from 'react-native'
+// import {NavigationContainer, useNavigation, useRoute} from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import {focused} from '@react-navigation/native'
+// import {focused} from '@react-navigation/native'
 import FeedNavigator from './FeedNavigator'
 import HomePageNavigator from './HomePageNavigator'
 import CalendarNavigator from './CalendarNavigator'
 import DiariesNavigator from './DiariesNavigator'
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import AddButton from '../components/AddButton'
+// import Icon from 'react-native-vector-icons/FontAwesome';
+// import { TouchableOpacity } from 'react-native-gesture-handler'
+// import AddButton from '../components/AddButton'
 
 
 
 const Tab = createBottomTabNavigator()
-const CustomTabBarButton = ({ children, onPress }) => (
-  <TouchableOpacity
-    onPress={onPress}
-    style={{
-      top: -30,
-      justifyContent: 'center',
-      alignItems: 'center',
-      ...styles.shadow
-    }}
-  >
-    <View style={{ width: 60, height: 60, borderRadius:30, backgroundColor:'white',}}>
-      {children}
-    </View>
-  </TouchableOpacity>
-)
-  
+ 
 export default function TabNavigator() {
   return (
     <Tab.Navigator
@@ -88,28 +73,7 @@ export default function TabNavigator() {
           )
         }}
       />
-    <Tab.Screen
-        name = "AddEntry"
-        component={AddButton}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <View>
-              <Image
-                source={require('../assets/Icons/add-outline.svg')}
-                resizeMode = 'contain'
-                style={{                
-                  width: 40,
-                  height: 40,
-                  tintColor: focused ? 'black' : 'purple'
-                }}
-              />
-            </View>
-          ),
-          tabBarButton: (props) => (
-            <CustomTabBarButton {...props} />
-          )
-        }}
-      /> 
+ 
     <Tab.Screen
       name = "Diaries"
         component={DiariesNavigator}
