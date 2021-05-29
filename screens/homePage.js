@@ -102,15 +102,6 @@ const MessagesScreen = ({ navigation }) => {
 
   return (
     <ScrollView>
-//        <BottomSheet
-//         ref={bs}
-//         snapPoints={[570, 0]}
-//         renderContent={renderInner}
-//         renderHeader={renderHeader}
-//         initialSnap={1}
-//         callbackNode={fall}
-//         enabledGestureInteraction={true}
-//       />
       <View style={styles.wrapper}>
       <View style={styles.motivationImgWrapper}>
           <Image
