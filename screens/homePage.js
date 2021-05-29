@@ -115,12 +115,12 @@ const MessagesScreen = ({ navigation }) => {
             <Text style={styles.addButtonText}>Add a note</Text>
           </View>
           </TouchableOpacity>
-          <TouchableOpacity > //onPress={() => bs.current.snapTo(0)}>
+          <TouchableOpacity > 
           <View style={styles.addButton}>
             <Text style={styles.addButtonText}>Add a note</Text>
           </View>
           </TouchableOpacity>
-          <TouchableOpacity > //onPress={() => bs.current.snapTo(0)}>
+          <TouchableOpacity >
           <View style={styles.addButton}>
             <Text style={styles.addButtonText}>Add</Text>
           </View>
