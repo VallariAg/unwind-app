@@ -1,5 +1,6 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
+import FeedView from '../pages/Feed'
 
 import { Text, View} from 'react-native'
 
@@ -22,7 +23,7 @@ export default function HomePageNavigator() {
   >
     <Stack.Screen
       name="Feed"
-      component= {Feed}
+      component= {FeedView}
     />
   </Stack.Navigator>      
   )
