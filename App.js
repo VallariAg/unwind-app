@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import { HASURA_SECRET } from '@env'
-
 import {NavigationContainer} from '@react-navigation/native'
 import AppNavigator from './index'
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import Diary from "./pages/Diary";
+import { HASURA_SECRET } from '@env'
+
 
 // Initialize Apollo Client
 const client = new ApolloClient({
@@ -32,5 +34,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    // width: "100",
+    margin: 0,
+    marginTop: StatusBar.curr || 0,
+    // marginTop: StatusBar.currentHeight || 0,
+      justifyContent: 'center',
   },
 });
