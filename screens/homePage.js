@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, FlatList, TouchableOpacity, Image, ScrollView } from 'react-native';
 // import AddEntry from '../components/AddEntry';
-import BottomSheet from 'reanimated-bottom-sheet';
+// import BottomSheet from 'reanimated-bottom-sheet';
 
-import Animated from 'react-native-reanimated';
+// import Animated from 'react-native-reanimated';
 
 
 const Messages = [
@@ -69,48 +69,48 @@ const ImageNote = ({ item }) => {
 
 const MessagesScreen = ({ navigation }) => {
   
-  const renderInner = () => (
-    <View style={styles.panel}>
-      <View style={{alignItems: 'center'}}>
-        <Text style={styles.panelTitle}>Add note</Text>
-        <Text style={styles.panelSubtitle}>Choose type of note S</Text>
-      </View>
-      <TouchableOpacity style={styles.panelButton} >
-        <Text style={styles.panelButtonTitle}>Add Photo</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.panelButton} >
-        <Text style={styles.panelButtonTitle}>Add Text Note</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.panelButton}
-        onPress={() => bs.current.snapTo(1)}>
-        <Text style={styles.panelButtonTitle}>Cancel</Text>
-      </TouchableOpacity>
-    </View>
-  );
+//   const renderInner = () => (
+//     <View style={styles.panel}>
+//       <View style={{alignItems: 'center'}}>
+//         <Text style={styles.panelTitle}>Add note</Text>
+//         <Text style={styles.panelSubtitle}>Choose type of note S</Text>
+//       </View>
+//       <TouchableOpacity style={styles.panelButton} >
+//         <Text style={styles.panelButtonTitle}>Add Photo</Text>
+//       </TouchableOpacity>
+//       <TouchableOpacity style={styles.panelButton} >
+//         <Text style={styles.panelButtonTitle}>Add Text Note</Text>
+//       </TouchableOpacity>
+//       <TouchableOpacity
+//         style={styles.panelButton}
+//         onPress={() => bs.current.snapTo(1)}>
+//         <Text style={styles.panelButtonTitle}>Cancel</Text>
+//       </TouchableOpacity>
+//     </View>
+//   );
 
-  const renderHeader = () => (
-    <View style={styles.header}>
-      <View style={styles.panelHeader}>
-        <View style={styles.panelHandle} />
-      </View>
-    </View>
-  );
+//   const renderHeader = () => (
+//     <View style={styles.header}>
+//       <View style={styles.panelHeader}>
+//         <View style={styles.panelHandle} />
+//       </View>
+//     </View>
+//   );
 
-  let bs = React.useRef(null);
-  let fall = new Animated.Value(1);
+//   let bs = React.useRef(null);
+//   let fall = new Animated.Value(1);
 
   return (
     <ScrollView>
-       <BottomSheet
-        ref={bs}
-        snapPoints={[570, 0]}
-        renderContent={renderInner}
-        renderHeader={renderHeader}
-        initialSnap={1}
-        callbackNode={fall}
-        enabledGestureInteraction={true}
-      />
+//        <BottomSheet
+//         ref={bs}
+//         snapPoints={[570, 0]}
+//         renderContent={renderInner}
+//         renderHeader={renderHeader}
+//         initialSnap={1}
+//         callbackNode={fall}
+//         enabledGestureInteraction={true}
+//       />
       <View style={styles.wrapper}>
       <View style={styles.motivationImgWrapper}>
           <Image
@@ -119,17 +119,17 @@ const MessagesScreen = ({ navigation }) => {
           />
         </View>
         <View style={styles.addButtonWrapper}>
-        <TouchableOpacity onPress={() => bs.current.snapTo(0)}>
+        <TouchableOpacity >
           <View style={styles.addButton}>
             <Text style={styles.addButtonText}>Add a note</Text>
           </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => bs.current.snapTo(0)}>
+          <TouchableOpacity > //onPress={() => bs.current.snapTo(0)}>
           <View style={styles.addButton}>
             <Text style={styles.addButtonText}>Add a note</Text>
           </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => bs.current.snapTo(0)}>
+          <TouchableOpacity > //onPress={() => bs.current.snapTo(0)}>
           <View style={styles.addButton}>
             <Text style={styles.addButtonText}>Add</Text>
           </View>
