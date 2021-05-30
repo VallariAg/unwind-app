@@ -11,14 +11,13 @@ import {
   Dimensions,
   ImageBackground,
   TextInput,
-  Animated,
-  Platform, 
+  Animated, 
   Button
 } from "react-native";
 import styles from "./../../styles/feedStyle"
 import { Slider } from 'react-native-elements';
-//import DateTimePicker from '@react-native-community/datetimepicker';
 import useGetDiary from "./../../hooks/useGetDiary";
+
 
 function OnCard({ data }) {
   let timeWokeUp = (!data.timeToBed) ? timeToBed = "--:--": data.timeToBed.substring(0,5);
@@ -39,23 +38,35 @@ const Separator = () => (
 );
 
 function InsideModal({setModalVisible, modalVisible, data}) {
-  const [number, onChangeNumber] = React.useState(null);
-  const [value, setValue] = React.useState(value);
-  
+  const [sleephrs, onChangeSleepHrs] = React.useState(null);
+  const [value, setValue] = React.useState(null);
+  const [timeswokeup, onChangeTimesWokeUp] = React.useState(null);
+
+
     return (<View style={styles.centeredView}>
       <View style={[styles.modalView, {backgroundColor: "#f7f6eb"}]}>
         <ImageBackground source={require("./../../assets/diary/sleepBG.png")} style={{width: '100%', height: '100%'}} imageStyle={{resizeMode: "contain"}}>
         <Text style={styles.modalHeadText}>Sleep Track Diary</Text>
+        <Separator/>
         <Text>How many hours did you sleep last night? </Text>
         <TextInput
         style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
+        onChangeText={onChangeSleepHrs}
+        value={sleephrs}
         placeholder="Enter hours of sleep"
         keyboardType="numeric"
       />
+  <Separator/>
+  <Text>How many times did you wake up from sleep last night? </Text>
+        <TextInput
+        style={styles.input}
+        onChangeText={onChangeTimesWokeUp}
+        value={timeswokeup}
+        placeholder="Enter number times you woke up"
+        keyboardType="numeric"
+      />
       <Separator/>
-      <Text>Rate the quality of your sleep: </Text>
+<Text>Rate the quality of your sleep: </Text>
       <Slider
     value={value}
     onValueChange={setValue}
@@ -67,8 +78,7 @@ function InsideModal({setModalVisible, modalVisible, data}) {
   />
   <Text>Value: {value}</Text>
   <Separator/>
-  <Text> What time did you go to sleep last night? </Text>
-  
+
         <Pressable
           style={[styles.button, styles.buttonClose, {backgroundColor: "#f0d62b"}]}
           onPress={() => setModalVisible(!modalVisible)}
@@ -88,8 +98,6 @@ export default function Sleep() {
     today = today.getFullYear() + "-" + today.getUTCMonth() + "-" + today.getUTCDate()
     
     const todayData = useGetDiary("2021-05-25")
-
-    // console.log(todayData)
 
     return (<ImageBackground source={require("./../../assets/diary/sleep.png")} style={styles.card} imageStyle={{borderRadius: 20, resizeMode: "cover"}}>
           <Modal

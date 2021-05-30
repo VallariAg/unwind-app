@@ -18,7 +18,7 @@ export default function TabNavigator() {
           position: 'relative',
           elevation: 0,
           borderRadius: 15,
-          backgroundColor: 'purple',
+          backgroundColor: '#8459d9',
           height: 70,
         },
       }}

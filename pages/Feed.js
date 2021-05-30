@@ -257,7 +257,7 @@ function Card({ indx }) {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          setModalVisible(!modalVisible);
+        setModalVisible(!modalVisible);
         }}
       >
         <View style={styles.centeredView}>

@@ -11,7 +11,7 @@ export default StyleSheet.create({
     },
     list: {
       flexDirection: "row",
-      height: 850,
+      //height: 850,
       marginVertical: 8,
       marginHorizontal: 10,
     },

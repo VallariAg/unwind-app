@@ -1,52 +1,86 @@
 import React from 'react';
+import { ImageBackground } from 'react-native';
 import { View, Text, Button, StyleSheet, FlatList, TouchableOpacity, Image, ScrollView } from 'react-native';
-// import AddEntry from '../components/AddEntry';
-// import BottomSheet from 'reanimated-bottom-sheet';
-
-// import Animated from 'react-native-reanimated';
 
 
 const Messages = [
   {
     id: '1',
-    userName: 'Jenny Doe',
-    userImg: require('../assets/images/1413983.jpg'),
-    messageTime: '4 mins ago',
-    messageText: false
+    userName: '30 May 2021',
+    messageTime: '7:31 AM',
+    messageText: 'Woke up feeling energetic, and happy. Yay! :D'
   },
   {
     id: '2',
-    userName: 'John Doe',
+    userName: '30 May 2021',
     userImg: 'none',
-    messageTime: '2 hours ago',
+    messageTime: '10:31 AM ',
     messageText:
-      'Hey there, this is my test for a post.',
+      'Wohoo! I am done w my to-do list! Gotta complete that project by EOD!',
   },
   {
     id: '3',
-    userName: 'Ken William',
+    userName: '30 May 2021',
     userImg: 'none',
-    messageTime: '1 hours ago',
+    messageTime: '11:30 AM',
     messageText:
-      'Hey there, this is my test for a post.',
+      'Chess is so cool!',
   },
   {
     id: '4',
-    userName: 'Selina Paul',
+    userName: '30 May 2021',
     userImg: 'none',
-    messageTime: '1 day ago',
+    messageTime: '11:31 AM',
     messageText:
-      'Hey there, this is my test for a post.',
+      'What was the highlight of your day?    Morning walk with my dog! <3',
   },
   {
     id: '5',
-    userName: 'Christy Alex',
+    userName: '30 May 2021',
     userImg: 'none',
-    messageTime: '2 days ago',
+    userImg: require('../assets/emojis/anxious.png'),
+    messageTime: '11:31 AM',
     messageText:
-      'Hey there, this is my test for a post.',
+      '',
   },
 ];
+
+const Messages29 = [
+  {
+    id: '1',
+    userName: '29 May 2021',
+    messageTime: '7:45 AM',
+    messageText: 'So the weekend starttss!'
+  },
+  {
+    id: '2',
+    userName: '29 May 2021',
+    userImg: 'none',
+    messageTime: '10:31 AM ',
+    messageText:
+      'Dem today is a lazy-lazy day. ',
+  },
+  {
+    id: '3',
+    userName: '29 May 2021',
+    userImg: 'none',
+    userImg: require('../assets/emojis/anxious.png'),
+    messageTime: '11:30 AM',
+    messageText:
+      '',
+  },
+  {
+    id: '4',
+    userName: '29 May 2021',
+    userImg: 'none',
+    messageTime: '11:31 AM',
+    messageText:
+      'What made you smile today?    The rain! The weather was so beautiful today!',
+  },
+ 
+];
+
+
 
 const TextNote = ({ item }) => {
   return (
@@ -69,69 +103,56 @@ const ImageNote = ({ item }) => {
 
 const MessagesScreen = ({ navigation }) => {
   
-//   const renderInner = () => (
-//     <View style={styles.panel}>
-//       <View style={{alignItems: 'center'}}>
-//         <Text style={styles.panelTitle}>Add note</Text>
-//         <Text style={styles.panelSubtitle}>Choose type of note S</Text>
-//       </View>
-//       <TouchableOpacity style={styles.panelButton} >
-//         <Text style={styles.panelButtonTitle}>Add Photo</Text>
-//       </TouchableOpacity>
-//       <TouchableOpacity style={styles.panelButton} >
-//         <Text style={styles.panelButtonTitle}>Add Text Note</Text>
-//       </TouchableOpacity>
-//       <TouchableOpacity
-//         style={styles.panelButton}
-//         onPress={() => bs.current.snapTo(1)}>
-//         <Text style={styles.panelButtonTitle}>Cancel</Text>
-//       </TouchableOpacity>
-//     </View>
-//   );
-
-//   const renderHeader = () => (
-//     <View style={styles.header}>
-//       <View style={styles.panelHeader}>
-//         <View style={styles.panelHandle} />
-//       </View>
-//     </View>
-//   );
-
-//   let bs = React.useRef(null);
-//   let fall = new Animated.Value(1);
-
   return (
     <ScrollView>
       <View style={styles.wrapper}>
       <View style={styles.motivationImgWrapper}>
-          <Image
+          <ImageBackground
             style={styles.motivationImg}
             source={require('../assets/images/1413983.jpg')}
           />
+          <View>
+         </View>
+          <ImageBackground />
         </View>
         <View style={styles.addButtonWrapper}>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={()  => navigation.navigate('AddEntry')}>
           <View style={styles.addButton}>
-            <Text style={styles.addButtonText}>Add a note</Text>
+              <Image
+                source={require('../assets/images/AddEntry.png')}
+                style={{height: 50, width: 50}}
+              />
           </View>
           </TouchableOpacity>
-          <TouchableOpacity > 
+
+          <TouchableOpacity onPress={() => navigation.navigate('AddMood')}>
           <View style={styles.addButton}>
-            <Text style={styles.addButtonText}>Add a note</Text>
+          <Image
+                source={require('../assets/images/mood.png')}
+                style={{height: 50, width: 50}}
+              />
           </View>
           </TouchableOpacity>
-          <TouchableOpacity >
+          
+          <TouchableOpacity onPress={() => navigation.navigate('AddPromptEntry')}>
           <View style={styles.addButton}>
-            <Text style={styles.addButtonText}>Add</Text>
+          <Image
+                source={require('../assets/images/Prompt.png')}
+                style={{height: 60, width: 50}}
+              />
           </View>
-        </TouchableOpacity>
+          </TouchableOpacity>
+          
         </View>
-      <View style={styles.container}>
+        <View style={styles.container}>
+        <View style={{ backgroundColor: 'pink', marginBottom: 10, padding: 10}}>
+          <Text>30 May 2021</Text>
+       </View>
         <FlatList 
           data={Messages}
           keyExtractor={item=>item.id}
             renderItem={({ item }) => (    
-              <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Chat', {userName: item.userName})}>
+              <TouchableOpacity style={styles.card} >
                 <View style={styles.userInfo}>
                   <View style={styles.userInfoText}>
                     <Text style={styles.userName}>{item.userName}</Text>
@@ -141,7 +162,26 @@ const MessagesScreen = ({ navigation }) => {
                { item.messageText ? <TextNote item={item} /> : <ImageNote item={item} />}
               </TouchableOpacity>       
           )}
-        />
+          />
+          <View style={{ backgroundColor: 'pink', marginBottom: 10, padding: 10}}>
+          <Text>29 May 2021</Text>
+       </View>
+          <FlatList 
+          data={Messages29}
+          keyExtractor={item=>item.id}
+            renderItem={({ item }) => (    
+              <TouchableOpacity style={styles.card} >
+                <View style={styles.userInfo}>
+                  <View style={styles.userInfoText}>
+                    <Text style={styles.userName}>{item.userName}</Text>
+                    <Text style={styles.postTime}>{item.messageTime}</Text>
+                  </View>
+                </View>
+               { item.messageText ? <TextNote item={item} /> : <ImageNote item={item} />}
+              </TouchableOpacity>       
+          )}
+          />
+          
       </View >
       </View>
     </ScrollView>
@@ -161,7 +201,7 @@ const styles = StyleSheet.create({
     width: '100%',
     opacity: .75,
     height: 150,
-    resizeMode: 'cover'
+    // resizeMode: 'cover'
   },
   addButtonWrapper: {
     marginTop: 20,
@@ -172,9 +212,9 @@ const styles = StyleSheet.create({
     
   },
   addButton: {
-    height: 80,
+    height: 60,
     width: 100,
-    backgroundColor: 'purple',
+    // backgroundColor: 'purple',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
@@ -228,7 +268,8 @@ const styles = StyleSheet.create({
     // justifyContent: 'right',
     // padding: 15,
     marginStart: 20,
-    marginBottom: 10,
+    marginTop: 10,
+    marginBottom: 20,
     width: "80%",
     // backgroundColor: 'blue'
   },

@@ -46,7 +46,7 @@ export default function HappyThings() {
     <View
       style={[
         styles.circularShape,
-        { marginVertical: 40, marginHorizontal: 15.5 },
+        { marginVertical: 10, marginHorizontal: 10 },
       ]}
     >
       <Modal
@@ -68,7 +68,7 @@ export default function HappyThings() {
               onPress={() => setModalVisible(!modalVisible)}
             >
               <View>
-                <Text style={styles.heading}>Remember when sad</Text>
+                <Text style={styles.heading}>Things that cheer me up</Text>
               </View>
             </Pressable>
             <View>

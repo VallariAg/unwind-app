@@ -46,7 +46,7 @@ export default function NightRoutine() {
     <View
       style={[
         styles.circularShape,
-        { marginVertical: 40, marginHorizontal: 15.5 },
+        { marginVertical: 10, marginHorizontal: 10 },
       ]}
     >
       <Modal

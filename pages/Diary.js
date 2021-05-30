@@ -12,6 +12,9 @@ import DreamsComponent from "./../components/Diary/Dreams";
 import PhysicalActivityComponent from "./../components/Diary/Physical";
 import useGetDiary from "./../hooks/useGetDiary";
 import useMakeDiary from "./../hooks/useMakeDiary";
+import HappyThings from "./../components/HappyThings"
+import MorningRoutine from "./../components/MorningRoutine"
+import NightRoutine from "./../components/NightRoutine"
 
 const DATA = [
   {
@@ -31,20 +34,29 @@ export default function FeedView() {
   console.log(date)
   const renderItem = ({}) => (
     <SafeAreaView style={styles.list}> 
-      <View style={{ flex: 1, marginHorizontal: 5 }}>
+    <View style={[styles.list, {flexDirection: "col"}]}>
+    <View style={[styles.list]}>
+    <HappyThings/>
+    <MorningRoutine/>
+    <NightRoutine/>
+    </View>
+    <View style={styles.list}>
+      <View style={[styles.list, {flexDirection: "col"}]}>
         <SleepComponent date={date} data={data}/>
         <GratitudeComponent date={date} data={data} />
         <DreamsComponent date={date} data={data} />
       </View>
-      <View style={{ flex: 1, marginHorizontal: 5 }}>
+      <View style={[styles.list, {flexDirection: "col"}]}>
         <WaterComponent date={date} data={data} />
         <PhysicalActivityComponent date={date} data={data} />
+      </View>
+      </View>
       </View>
     </SafeAreaView>
   );
 
   return (
-    <View style={{flex: 1, backgroundColor: "red"}}>
+    <View style={{flex: 1, backgroundColor: "white"}}>
       <FlatList data={DATA} renderItem={renderItem} />
     </View>
   );
