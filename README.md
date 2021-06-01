@@ -6,7 +6,9 @@ An app that gives you a space to journal, label emotions, and track lifestyle ha
 
 Introduction to app: [Idea Presentation](https://www.youtube.com/watch?v=bbM1T8wtLPI)
 
-![](./Unwind.mp4)
+![](./unwind%20images/diary.png)
+![](./unwind%20images/feed.png)
+![](./unwind%20images/journal.png)
 
 
 ## Prerequisites
